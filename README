@@ -1,1 +1,26 @@
 Yet Another Segment
+===================【试了下，缺了文件，无法执行】==================
+（1）pytnon test_datrie.py 失败，缺datrie包
+（2）$python douban_lsi.py  
+Building prefix dict from the default dictionary ...
+Dumping model to file cache /tmp/jieba.cache
+Loading model cost 2.570 seconds.
+Prefix dict has been built succesfully.
+Traceback (most recent call last):
+  File "douban_lsi.py", line 68, in <module>
+    class DoubanCorpus(object):
+  File "douban_lsi.py", line 69, in DoubanCorpus
+    def __init__(self, root_dir='douban', dictionary=get_dictionary()):
+  File "douban_lsi.py", line 65, in get_dictionary
+    dictionary.save(os.path.join(RESULT_DIR, 'douban_note.dict'))
+  File "/home/warren/scikit/list/lib/python2.7/site-packages/gensim/utils.py", line 478, in save
+    pickle_protocol=pickle_protocol)
+  File "/home/warren/scikit/list/lib/python2.7/site-packages/gensim/utils.py", line 351, in _smart_save
+    pickle(self, fname, protocol=pickle_protocol)
+  File "/home/warren/scikit/list/lib/python2.7/site-packages/gensim/utils.py", line 903, in pickle
+    with smart_open(fname, 'wb') as fout:  # 'b' for binary, needed on Windows
+  File "/home/warren/scikit/list/lib/python2.7/site-packages/smart_open/smart_open_lib.py", line 119, in smart_open
+    return file_smart_open(parsed_uri.uri_path, mode)
+  File "/home/warren/scikit/list/lib/python2.7/site-packages/smart_open/smart_open_lib.py", line 427, in file_smart_open
+    return open(fname, mode)
+IOError: [Errno 2] No such file or directory: 'douban_result/douban_note.dict'
